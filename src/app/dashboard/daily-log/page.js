@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Calendar, Send, Loader2, Heart, MessageCircle, Sparkles, Clock } from 'lucide-react';
 import { format } from 'date-fns';
+import {label_to_emoji} from "../../../lib/model-mapping";
 
 export default function DailyLogPage() {
   const [text, setText] = useState('');
@@ -263,7 +264,7 @@ export default function DailyLogPage() {
                         key={emotionIndex}
                         className={`text-xs px-3 py-1 rounded-full font-medium ${getEmotionColor(emotion.emotion)}`}
                       >
-                        {emotion.emotion}
+                        {emotion.emotion} {label_to_emoji[emotion.emotion.substring(0,1).toUpperCase()+emotion.emotion.substring(1, emotion.emotion.length)]}
                       </span>
                     ))}
                   </div>

@@ -5,6 +5,7 @@ import { TrendingUp, Heart, MessageCircle, Calendar, BarChart3, Book as BookOpen
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement } from 'chart.js';
 import { Line, Doughnut } from 'react-chartjs-2';
 import { format, subDays, parseISO } from 'date-fns';
+import {label_to_emoji} from "../../../lib/model-mapping";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement);
 
@@ -397,9 +398,9 @@ export default function AnalyticsPage() {
               .map((emotion, index) => (
                 <span
                   key={index}
-                  className="emotion-badge emotion-neutral hover:scale-105 transition-transform cursor-default"
+                  className={`emotion-badge emotion-${emotion} hover:scale-105 transition-transform cursor-default`}
                 >
-                  {emotion}
+                  {emotion} {label_to_emoji[emotion.substring(0,1).toUpperCase()+emotion.substring(1, emotion.length)]}
                 </span>
               ))}
           </div>

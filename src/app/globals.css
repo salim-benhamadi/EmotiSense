@@ -14,13 +14,14 @@
   --color-primary-800: #075985;
   --color-primary-900: #0c4a6e;
   --color-emotion-joy: #fbbf24;
+  --color-emotion-excitement: #fbbf24;
   --color-emotion-sadness: #3b82f6;
   --color-emotion-anger: #ef4444;
   --color-emotion-fear: #8b5cf6;
   --color-emotion-surprise: #f59e0b;
   --color-emotion-disgust: #10b981;
   --color-emotion-neutral: #6b7280;
-  --colot-black: unset;
+  --color-black: unset !important;
   --spacing-18: 4.5rem;
   --spacing-88: 22rem;
   --radius-xs: 0.125rem;
@@ -271,6 +272,12 @@
 }
 
 @utility emotion-joy {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.25) 100%);
+  color: #b45309;
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+@utility emotion-excitement {
   background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.25) 100%);
   color: #b45309;
   border-color: rgba(251, 191, 36, 0.3);
