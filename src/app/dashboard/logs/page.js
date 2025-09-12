@@ -100,6 +100,7 @@ export default function LogsPage() {
   const getEmotionColor = (emotion) => {
     const colors = {
       joy: 'emotion-joy',
+      excitement: 'emotion-joy',
       happiness: 'emotion-joy',
       sadness: 'emotion-sadness',
       anger: 'emotion-anger',

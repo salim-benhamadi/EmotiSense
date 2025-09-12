@@ -80,6 +80,7 @@ export default function DailyLogPage() {
     const colors = {
       joy: 'emotion-joy',
       happiness: 'emotion-joy',
+      excitement: 'emotion-joy',
       sadness: 'emotion-sadness',
       anger: 'emotion-anger',
       fear: 'emotion-fear',
