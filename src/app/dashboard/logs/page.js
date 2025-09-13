@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Calendar, Search, Filter, MessageCircle, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 import { format, parseISO, startOfMonth, endOfMonth } from 'date-fns';
+import {label_to_emoji} from "../../../lib/model-mapping";
 
 export default function LogsPage() {
   const [logs, setLogs] = useState([]);
@@ -100,6 +101,7 @@ export default function LogsPage() {
   const getEmotionColor = (emotion) => {
     const colors = {
       joy: 'emotion-joy',
+      excitement: 'emotion-joy',
       happiness: 'emotion-joy',
       sadness: 'emotion-sadness',
       anger: 'emotion-anger',
@@ -204,7 +206,7 @@ export default function LogsPage() {
                 className="card-hover cursor-pointer"
                 onClick={() => router.push(`/dashboard/introspection/${log.id}`)}
               >
-                <div className="flex items-start justify-between mb-3">
+                <div className="flex flex-col md:flex-row items-start justify-between mb-3">
                   <div className="flex items-center space-x-3">
                     <div className="bg-primary-100 p-2 rounded-lg">
                       <Calendar className="h-4 w-4 text-primary-600" />
@@ -225,7 +227,7 @@ export default function LogsPage() {
                         key={index}
                         className={`emotion-badge ${getEmotionColor(emotion.emotion)} text-xs`}
                       >
-                        {emotion.emotion}
+                        {emotion.emotion} {label_to_emoji[emotion.emotion.substring(0,1).toUpperCase()+emotion.emotion.substring(1, emotion.emotion.length)]}
                       </span>
                     ))}
                   </div>

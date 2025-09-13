@@ -230,7 +230,7 @@ export default function ChatPage() {
           {Array.isArray(log.detectedEmotions) && log.detectedEmotions.length > 0 && (
             <div className="mt-2 flex flex-wrap gap-1">
               {log.detectedEmotions.slice(0, 3).map((emotion, index) => (
-                <span key={index} className="emotion-badge emotion-neutral text-xs">
+                <span key={index} className={`emotion-badge emotion-${emotion.emotion} text-xs`}>
                   {emotion.emotion}
                 </span>
               ))}

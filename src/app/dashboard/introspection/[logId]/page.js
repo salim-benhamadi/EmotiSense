@@ -292,7 +292,7 @@ export default function IntrospectionPage() {
             {log.detectedEmotions.map((emotion, index) => (
               <span
                 key={index}
-                className="emotion-badge emotion-neutral text-xs"
+                className={`emotion-badge emotion-${emotion.emotion} text-xs`}
               >
                 {emotion.emotion}
               </span>
