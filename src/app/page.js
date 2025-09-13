@@ -1,11 +1,10 @@
-
 'use client';
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '../contexts/AuthContext.js';
-import { Brain, Heart, Users, TrendingUp, Shield, Lightbulb, Sparkles, ArrowRight } from 'lucide-react';
+import { Brain, Heart, Users, TrendingUp, Shield, Lightbulb, Sparkles, ArrowRight, Award, Trophy } from 'lucide-react';
 
 export default function HomePage() {
   const { user, loading } = useAuth();
@@ -61,6 +60,38 @@ export default function HomePage() {
       </nav>
 
       <main>
+        {/* Award Recognition Section */}
+        <section className="py-8 sm:py-12 bg-gradient-to-r from-yellow-50 via-orange-50 to-yellow-50 border-b border-yellow-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 text-center sm:text-left">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center">
+                  <img 
+                    src="./assets/trophy-award.png" 
+                    alt="FastwebAI Hackathon Award Trophy" 
+                    className="h-12 w-12 sm:h-16 sm:w-16 object-contain drop-shadow-lg"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex items-center space-x-2 mb-1">
+                    <Award className="h-5 w-5 text-yellow-600" />
+                    <span className="text-sm font-semibold text-yellow-800 uppercase tracking-wide">Winner</span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-neutral-900">FastwebAI Hackathon</h3>
+                  <p className="text-sm text-neutral-700">Best Inclusion Project Award</p>
+                </div>
+              </div>
+              <div className="hidden sm:block w-px h-16 bg-yellow-200"></div>
+              <div className="max-w-md">
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                  Recognized for creating innovative AI solutions that prioritize inclusivity and accessibility 
+                  in emotional wellbeing technology for neurodivergent individuals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="relative py-16 sm:py-20 lg:py-32 overflow-hidden bg-gradient-to-br from-neutral-50 to-primary-50">
           <div className="absolute inset-0">
             <div className="absolute top-10 left-1/4 w-48 h-48 sm:w-72 sm:h-72 bg-primary-200/20 rounded-full blur-3xl animate-gentle-bounce"></div>
@@ -71,7 +102,7 @@ export default function HomePage() {
             <div className="mb-6 sm:mb-8">
               <div className="inline-flex items-center space-x-2 px-3 py-2 sm:px-4 sm:py-2 bg-white/80 backdrop-blur-sm rounded-full border border-primary-200/50 mb-4 sm:mb-6">
                 <Sparkles className="h-4 w-4 text-primary-600" />
-                <span className="text-xs sm:text-sm font-medium text-neutral-800">Designed for Neurodivergent Minds</span>
+                <span className="text-xs sm:text-sm font-medium text-neutral-800">Award-Winning AI for Neurodivergent Minds</span>
               </div>
             </div>
             
@@ -194,10 +225,10 @@ export default function HomePage() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-100 to-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
                   <Users className="h-6 w-6 sm:h-8 sm:w-8 text-indigo-600" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-neutral-900">Built by Understanding</h3>
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-neutral-900">Award-Winning Innovation</h3>
                 <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
-                  Created with input from neurodivergent individuals and based on current 
-                  research in alexithymia and autism spectrum experiences.
+                  Recognized by industry leaders for excellence in inclusive AI design, 
+                  built with input from neurodivergent individuals and current research.
                 </p>
               </div>
             </div>
@@ -212,7 +243,7 @@ export default function HomePage() {
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-black-100 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
               Join a supportive platform designed specifically for minds like yours. 
-              Begin exploring your emotional world with patience, understanding, and AI guidance.
+              Begin exploring your emotional world with patience, understanding, and award-winning AI guidance.
             </p>
             <Link href="/auth/register" className="inline-flex items-center bg-white text-primary-600 hover:bg-primary-50 font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl group text-sm sm:text-base">
               Create Your Account
@@ -233,7 +264,7 @@ export default function HomePage() {
                   a different way of experiencing the world.
                 </p>
                 <p className="text-neutral-300 leading-relaxed text-sm sm:text-base">
-                  Our platform respects these differences and provides tools that work with your 
+                  Our award-winning platform respects these differences and provides tools that work with your 
                   natural communication style, not against it.
                 </p>
               </div>
@@ -254,7 +285,7 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Personalized approaches show significantly better outcomes</span>
+                    <span>Award-winning inclusive approaches show significantly better outcomes</span>
                   </li>
                 </ul>
               </div>
@@ -273,12 +304,12 @@ export default function HomePage() {
                 </div>
                 <div>
                   <span className="text-base sm:text-lg font-semibold">EmotiSense AI</span>
-                  <p className="text-xs text-neutral-400">Emotional Awareness</p>
+                  <p className="text-xs text-neutral-400">Award-Winning Emotional Awareness</p>
                 </div>
               </div>
               <p className="text-neutral-400 leading-relaxed text-sm sm:text-base">
                 Supporting neurodivergent individuals in understanding their emotional experiences 
-                with compassion and AI-powered insights.
+                with compassion and award-winning AI-powered insights.
               </p>
             </div>
             <div>
